@@ -42,7 +42,7 @@ module Node : Irmin.Private.Node.Maker = struct
     (* [V1] is only used to compute preimage hashes. [assert false]
        statements should be unreachable.*)
     module V1 : sig
-      val pre_hash : M.t -> (string -> unit) -> unit
+      val pre_hash : M.t -> bytes -> int -> int
     end = struct
       module Hash = Irmin.Hash.V1 (Hash)
 
